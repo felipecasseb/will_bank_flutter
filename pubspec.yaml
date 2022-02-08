@@ -62,6 +62,12 @@ flutter:
     - image/logo.png
     - image/login.png
     - image/logoTransparent.png
+    - image/pig.png
+    - image/band.png
+    - image/perfil.jpg
+    - image/pix.png
+    - image/depositar.png
+    - image/cartao.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
