@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:will_bank_flutter/modules/home/widgets/banner_three.dart';
+import 'package:will_bank_flutter/modules/home/widgets/banner_two.dart';
+import 'package:will_bank_flutter/modules/home/widgets/container_center.dart';
+import 'package:will_bank_flutter/modules/home/widgets/container_banner_one.dart';
+import 'package:will_bank_flutter/modules/home/widgets/container_top.dart';
 import 'package:will_bank_flutter/theme/app_theme.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -32,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       Row(
                         children: [
                           Padding(
-                            padding: const EdgeInsets.only(top: 81, left: 16),
+                            padding: const EdgeInsets.only(top: 51, left: 16),
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(100),
                               child: Image.asset("image/perfil.jpg", height: 48, width: 48,),
@@ -40,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                           SizedBox(width: 16,),
                           Padding(
-                            padding: const EdgeInsets.only(top: 81),
+                            padding: const EdgeInsets.only(top: 51),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
@@ -50,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(top: 81, left: 153),
+                            padding: const EdgeInsets.only(top: 51, left: 153),
                             child: Icon(Icons.remove_red_eye),
                           )
                         ],
@@ -62,117 +67,29 @@ class _HomeScreenState extends State<HomeScreen> {
                           children: [
 
                             //conta digital
-                            Container(
-                              decoration: BoxDecoration(
-                                color: AppTheme.colors.grey,
-                                borderRadius: BorderRadius.circular(10)
-                              ),
-                              width: 156,
-                              height: 100,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.only(left: 16, right: 16, top: 11),
-                                    child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Text("Conta digital", style: TextStyle(fontSize: 12, color: Colors.black),),
-                                        Icon(Icons.arrow_forward_ios_outlined, size: 12, color: Colors.black54,)
-                                      ],
-                                    ),
-                                  ),
-                                  SizedBox(height: 20,),
-                                  Padding(
-                                    padding: const EdgeInsets.only(left: 16, bottom: 2),
-                                    child: Text("Saldo disponível", style: TextStyle(fontSize: 12, color: Colors.black),),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(left: 16, bottom: 2),
-                                    child: Text("R\$ 20,00", style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),),
-                                  ),
-                                  Row(
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsets.only(left: 16),
-                                        child: Text("Rende 110% ", style: TextStyle(fontSize: 12, color: AppTheme.colors.green),),
-                                      ),
-                                      Text("do CDI", style: TextStyle(fontSize: 12, color: Colors.black),),
-                                    ],
-                                  )
-                                ],
-                              ),
+                            ContainerTop(
+                                text1: "Conta digital",
+                                text2: "Saldo disponível",
+                                text3: "R\$ 20,00",
+                                text4: "Rende 110% ",
+                                text5: "do CDI"
                             ),
                             SizedBox(width: 12,),
 
                             //cartao de credito
-                            Container(
-                              decoration: BoxDecoration(
-                                  color: AppTheme.colors.grey,
-                                  borderRadius: BorderRadius.circular(10)
-                              ),
-                              width: 156,
-                              height: 100,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.only(left: 16, right: 16, top: 11),
-                                    child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Text("Cartão de crédito", style: TextStyle(fontSize: 12, color: Colors.black),),
-                                        Icon(Icons.arrow_forward_ios_outlined, size: 12, color: Colors.black54,)
-                                      ],
-                                    ),
-                                  ),
-                                  SizedBox(height: 20,),
-                                  Padding(
-                                    padding: const EdgeInsets.only(left: 16, bottom: 2),
-                                    child: Text("Fatura aberta", style: TextStyle(fontSize: 12, color: Colors.black),),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(left: 16, bottom: 2),
-                                    child: Text("R\$ 0,00", style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),),
-                                  ),
-                                  Row(
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsets.only(left: 16),
-                                        child: Text("Fecha em 04/02", style: TextStyle(fontSize: 12, color: AppTheme.colors.green),),
-                                      ),
-                                    ],
-                                  )
-                                ],
-                              ),
-                            )
+                            ContainerTop(
+                                text1: "Cartão de crédito",
+                                text2: "Fatura aberta",
+                                text3: "R\$ 0,00",
+                                text4: "Fecha em 04/02",
+                                text5: ""
+                            ),
                           ],
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(top: 15, left: 16, right: 16),
-                        child: Container(
-                          decoration: BoxDecoration(
-                              color: AppTheme.colors.grey,
-                              borderRadius: BorderRadius.circular(10)
-                          ),
-                          width: MediaQuery.of(context).size.width,
-                          height: 41,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(left: 16),
-                                child: Text("Limite disponível do cartão", style: TextStyle(fontSize: 12),),
-                              ),
-                              Text("R\$ 0,00", style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),),
-                              Padding(
-                                padding: const EdgeInsets.only(right: 16),
-                                child: Icon(Icons.arrow_forward_ios_outlined, size: 12, color: Colors.black54,),
-                              )
-                            ],
-                          ),
-                        ),
+                        child: ContainerCenter(),
                       )
                     ],
                   ),
@@ -181,195 +98,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   top: 340.0,
                   left: 16.0,
                   right: 16.0,
-                  child: Container(
-                    decoration: BoxDecoration(
-                        color: AppTheme.colors.grey,
-                        borderRadius: BorderRadius.circular(10)
-                    ),
-                    width: MediaQuery.of(context).size.width,
-                    height: 100,
-                    child: Column(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(left: 16, top: 11),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text("Gerenciar cartões", style: TextStyle(fontSize: 12,),),
-                              Padding(
-                                padding: const EdgeInsets.only(right: 16),
-                                child: Icon(Icons.arrow_forward_ios_outlined, size: 12, color: Colors.black54,),
-                              )
-                            ],
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 16, top: 27),
-                          child: Row(
-                            children: [
-                              Container(
-                                height: 9,
-                                width: 9,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  color: AppTheme.colors.green
-                                ),
-                              ),
-                              SizedBox(width: 20,),
-                              Text("Virtual", style: TextStyle(fontSize: 12,),),
-                              SizedBox(width: 20,),
-                              Text("Liberado para compras", style: TextStyle(fontSize: 12,),),
-                            ],
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 16, top: 4),
-                          child: Row(
-                            children: [
-                              Container(
-                                height: 9,
-                                width: 9,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10),
-                                    color: AppTheme.colors.green
-                                ),
-                              ),
-                              SizedBox(width: 20,),
-                              Text("Físico", style: TextStyle(fontSize: 12,),),
-                              SizedBox(width: 20,),
-                              Text(" Liberado para compras", style: TextStyle(fontSize: 12,),),
-                            ],
-                          ),
-                        )
-                      ],
-                    )
-                  )
+                  child: ContainerBannerOne(),
                 )
               ],
             ),
-            Stack(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 16, right: 16, top: 15),
-                  child: Container(
-                    decoration: BoxDecoration(
-                        color: AppTheme.colors.grey,
-                        borderRadius: BorderRadius.circular(10)
-                    ),
-                    width: MediaQuery.of(context).size.width,
-                    height: 100,
-                  ),
-                ),
-                Positioned(
-                    top: 5.0,
-                    left: 36.0,
-                    //right: 16.0,
-                    child: Container(
-                      width: 44,
-                      height: 22,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: AppTheme.colors.green
-                      ),
-                      child: Center(
-                        child: Text("Novo", style: TextStyle(color: Colors.white, fontSize: 12),),
-                      )
-                    )
-                ),
-                Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 20, top: 42),
-                      child: Image.asset("image/pig.png"),
-                    ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: [
-                            Text(
-                              "Sobrou dindim? Comece a investir",
-                              style: TextStyle(color: Colors.black, fontSize: 12),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 16),
-                              child: Icon(Icons.arrow_forward_ios_outlined, size: 12, color: Colors.black54,),
-                            ),
-                          ],
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 8),
-                          child: Wrap(
-                            children: [
-                              Container(
-                                width: 197,
-                                height: 28,
-                                child: Text(
-                                  "Invista o valor que quiser e escolha o dia para retirar a grana que rendeu.",
-                                  style: TextStyle(color: Colors.black, fontSize: 12),
-                                ),
-                              )
-                            ],
-                          )
-                        )
-                      ],
-                    )
-                  ],
-                )
-              ],
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 16, right: 16, top: 16),
-              child: Container(
-                decoration: BoxDecoration(
-                    color: AppTheme.colors.grey,
-                    borderRadius: BorderRadius.circular(10)
-                ),
-                width: MediaQuery.of(context).size.width,
-                height: 100,
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(left: 16, top: 20),
-                          child: Text(
-                            "Indique seus amigos",
-                            style: TextStyle(color: Colors.black, fontSize: 12),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 16, top: 8),
-                          child: Wrap(
-                            children: [
-                              Container(
-                                width: 111,
-                                height: 42,
-                                child: Text(
-                                  "assim eles têm mais chance de serem aprovados!",
-                                  style: TextStyle(color: Colors.black, fontSize: 12),
-                                ),
-                              )
-                            ],
-                          )
-                        ),
-                      ],
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 50, top: 5, bottom: 2),
-                      child: Image.asset("image/band.png"),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 16),
-                      child: Icon(Icons.arrow_forward_ios_outlined, size: 12, color: Colors.black54,),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Padding(padding: EdgeInsets.only(top: 52,),
+            BannerTwo(),
+            BannerThree(),
+            Padding(padding: EdgeInsets.only(top: 32,),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
