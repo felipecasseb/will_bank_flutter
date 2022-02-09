@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:will_bank_flutter/modules/home/widgets/banner_three.dart';
-import 'package:will_bank_flutter/modules/home/widgets/banner_two.dart';
-import 'package:will_bank_flutter/modules/home/widgets/container_center.dart';
-import 'package:will_bank_flutter/modules/home/widgets/container_banner_one.dart';
-import 'package:will_bank_flutter/modules/home/widgets/container_top.dart';
+import 'package:will_bank_flutter/modules/home/widgets/banner/banner_three.dart';
+import 'package:will_bank_flutter/modules/home/widgets/banner/banner_two.dart';
+import 'package:will_bank_flutter/modules/home/widgets/banner/container_center.dart';
+import 'package:will_bank_flutter/modules/home/widgets/banner/container_banner_one.dart';
+import 'package:will_bank_flutter/modules/home/widgets/banner/container_top.dart';
+import 'package:will_bank_flutter/modules/home/widgets/buttom/buttom_menu_bottom.dart';
 import 'package:will_bank_flutter/theme/app_theme.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -108,40 +109,20 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Container(
-                    width: 80,
-                    height: 50,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.asset("image/pix.png"),
-                        SizedBox(height: 8,),
-                        Text("Central Pix", style: TextStyle(fontSize: 12),)
-                      ],
-                    ),
+                  ButtomMenuBottom(
+                      text: "Central Pix",
+                      image: "image/pix.png"
+                  ),
+                  ButtomMenuBottom(
+                      text: "Transferir",
+                      image: "image/depositar.png"
                   ),
                   Container(
                     width: 80,
                     height: 50,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.asset("image/depositar.png"),
-                        SizedBox(height: 8,),
-                        Text("Transferir", style: TextStyle(fontSize: 12),)
-                      ],
-                    ),
-                  ),
-                  Container(
-                    width: 80,
-                    height: 50,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.asset("image/cartao.png"),
-                        SizedBox(height: 8,),
-                        Text("Cartão virtual", style: TextStyle(fontSize: 12),)
-                      ],
+                    child:  ButtomMenuBottom(
+                        text: "Cartão Virtual",
+                        image: "image/cartao.png"
                     ),
                   )
                 ],

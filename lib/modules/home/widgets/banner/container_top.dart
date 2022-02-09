@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:will_bank_flutter/modules/home/widgets/text_twelve_black.dart';
-import 'package:will_bank_flutter/modules/home/widgets/text_twelve_bold.dart';
+import 'package:will_bank_flutter/modules/home/widgets/icon/icon_twelve.dart';
+import 'package:will_bank_flutter/modules/home/widgets/text/text_twelve_black.dart';
+import 'package:will_bank_flutter/modules/home/widgets/text/text_twelve_bold.dart';
 import 'package:will_bank_flutter/theme/app_theme.dart';
-
-import 'icon_twelve.dart';
 
 class ContainerTop extends StatelessWidget {
 
